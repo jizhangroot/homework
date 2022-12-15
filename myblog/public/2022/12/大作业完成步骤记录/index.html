@@ -24,7 +24,7 @@
     <meta name="keywords" content="作业, Hzx" />
     
     <meta property="og:title" content="大作业完成步骤记录" />
-<meta property="og:description" content="socket 使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。 使用 ubuntu 镜像启动两个容器 分别启动进入容器 $ docker start &lt;容器 ID&gt; $ docker attach &lt;容器 ID&gt; 在容器中运行服务端和客户端代码 服务端代码 客户端代码 实现服务端客户端之间的信息传递 Hugo 使用Hugo，生成静态网站，部署到Nginx服务器 安装Hugo，创建个人网站 $ hugo new site myblog 到hugo主题商店拉取模板，放在themes目录 $ git clone https://github.com/xslingcn/vno-hugo.git themes/vno-hugo 创建文章，使用Markdown语法编写网站内容 $ hugo new posts/hello.md 预览网站 $ hugo server 将静态网站部署到Nginx服务器 $ hugo -D 使用hugo -t &lt;模板名&gt;建立public文件 $ sudo cp public/* /var/www/html -r 将public文件放至nginx的/var/www/html目录 6. 测试可以正常访问" />
+<meta property="og:description" content="socket 使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。 使用 ubuntu 镜像启动两个容器 分别启动进入容器 $ docker start &lt;容器 ID&gt; $ docker attach &lt;容器 ID&gt; 在容器中运行服务端和客户端代码 服务端代码 客户端代码 实现服务端客户端之间的信息传递 Hugo 使用Hugo，生成静态网站，部署到Nginx服务器 安装Hugo，创建个人网站 $ hugo new site myblog 到hugo主题商店拉取模板，放在themes目录 $ git clone https://github.com/xslingcn/vno-hugo.git themes/vno-hugo 创建文章，使用Markdown语法编写网站内容 $ hugo new posts/hello.md 预览网站 $ hugo server 创建容器，将网站相关文件拷贝到容器里 将静态网站部署到Nginx服务器 $ hugo -D 使用hugo -t &lt;模板名&gt;建立public文件 $ sudo cp public/* /var/www/html -r 将public文件放至nginx的/var/www/html目录 启动nginx服务，测试可以正常访问 Git 使用git管理相关的代码、配置文件等，反映大作业过程的git提交记录。 先在github创建仓库，然后在Settings-&gt;develop settings-&gt;Personal Access token-&gt;Generate new token创建一个提交的token 生成密钥，添加New Key $ ssh-keygen -t rsa -C &#34;注册Github用的邮箱&#34; 提交文件到仓库 $ git remote add origin https://github." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2022/12/%E5%A4%A7%E4%BD%9C%E4%B8%9A%E5%AE%8C%E6%88%90%E6%AD%A5%E9%AA%A4%E8%AE%B0%E5%BD%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-12-13T07:28:17+08:00" />
@@ -33,7 +33,7 @@
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="大作业完成步骤记录"/>
-<meta name="twitter:description" content="socket 使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。 使用 ubuntu 镜像启动两个容器 分别启动进入容器 $ docker start &lt;容器 ID&gt; $ docker attach &lt;容器 ID&gt; 在容器中运行服务端和客户端代码 服务端代码 客户端代码 实现服务端客户端之间的信息传递 Hugo 使用Hugo，生成静态网站，部署到Nginx服务器 安装Hugo，创建个人网站 $ hugo new site myblog 到hugo主题商店拉取模板，放在themes目录 $ git clone https://github.com/xslingcn/vno-hugo.git themes/vno-hugo 创建文章，使用Markdown语法编写网站内容 $ hugo new posts/hello.md 预览网站 $ hugo server 将静态网站部署到Nginx服务器 $ hugo -D 使用hugo -t &lt;模板名&gt;建立public文件 $ sudo cp public/* /var/www/html -r 将public文件放至nginx的/var/www/html目录 6. 测试可以正常访问"/>
+<meta name="twitter:description" content="socket 使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。 使用 ubuntu 镜像启动两个容器 分别启动进入容器 $ docker start &lt;容器 ID&gt; $ docker attach &lt;容器 ID&gt; 在容器中运行服务端和客户端代码 服务端代码 客户端代码 实现服务端客户端之间的信息传递 Hugo 使用Hugo，生成静态网站，部署到Nginx服务器 安装Hugo，创建个人网站 $ hugo new site myblog 到hugo主题商店拉取模板，放在themes目录 $ git clone https://github.com/xslingcn/vno-hugo.git themes/vno-hugo 创建文章，使用Markdown语法编写网站内容 $ hugo new posts/hello.md 预览网站 $ hugo server 创建容器，将网站相关文件拷贝到容器里 将静态网站部署到Nginx服务器 $ hugo -D 使用hugo -t &lt;模板名&gt;建立public文件 $ sudo cp public/* /var/www/html -r 将public文件放至nginx的/var/www/html目录 启动nginx服务，测试可以正常访问 Git 使用git管理相关的代码、配置文件等，反映大作业过程的git提交记录。 先在github创建仓库，然后在Settings-&gt;develop settings-&gt;Personal Access token-&gt;Generate new token创建一个提交的token 生成密钥，添加New Key $ ssh-keygen -t rsa -C &#34;注册Github用的邮箱&#34; 提交文件到仓库 $ git remote add origin https://github."/>
 
 
     
@@ -235,15 +235,40 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ hugo server
 </span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_aec2f6d9ba484a104ab1ef7758fa68b9.png" alt=""></p>
 <ol start="5">
+<li>创建容器，将网站相关文件拷贝到容器里</li>
+</ol>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_1505703da10ecbee0351c2a464475277.png" alt=""></p>
+<ol start="6">
 <li>将静态网站部署到Nginx服务器</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ hugo -D
 </span></span><span style="display:flex;"><span>使用hugo -t &lt;模板名&gt;建立public文件
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo cp public/* /var/www/html -r
 </span></span><span style="display:flex;"><span>将public文件放至nginx的/var/www/html目录
-</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_ccc40be515d4fda4d82de9b965742d20.png" alt="">
-6. 测试可以正常访问</p>
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_74780fba05eafd9fd6182f5465b2dbaa.png" alt=""></p>
+<ol start="7">
+<li>启动nginx服务，测试可以正常访问</li>
+</ol>
 <p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_1d600d01c017effef562e72aa400a4a9.png" alt=""></p>
+<h1 id="git">Git</h1>
+<h3 id="使用git管理相关的代码配置文件等反映大作业过程的git提交记录">使用git管理相关的代码、配置文件等，反映大作业过程的git提交记录。</h3>
+<ol>
+<li>先在github创建仓库，然后在Settings-&gt;develop settings-&gt;Personal Access token-&gt;Generate new token创建一个提交的token</li>
+</ol>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_3baecdbc4695444f5d954ebd1ca88a1e.png" alt=""></p>
+<ol start="2">
+<li>生成密钥，添加New Key</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;注册Github用的邮箱&#34;</span>
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_9f0abd54ab35c7030bb93a090a5bdbfc.png" alt=""></p>
+<ol start="3">
+<li>提交文件到仓库</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git remote add origin https://github.com/账户名/项目名 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git add 
+</span></span><span style="display:flex;"><span>$ git commit -m
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git push origin master 
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_45822d580b1ab7d59c83159797a68cfa.png" alt=""></p>
 
     </section>
 </article>
@@ -297,7 +322,7 @@
         <section class="footer">
     <footer>
         <span class="footer__copyright">This site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> license.</span>
-        <span class="footer__copyright">Generated by <a href="https://gohugo.io/">Hugo</a> at 2022-12-14, themed with <a href="https://github.com/xslingcn/vno-hugo"> Vno - Hugo</a>.</span>
+        <span class="footer__copyright">Generated by <a href="https://gohugo.io/">Hugo</a> at 2022-12-15, themed with <a href="https://github.com/xslingcn/vno-hugo"> Vno - Hugo</a>.</span>
     </footer>
 </section>
 

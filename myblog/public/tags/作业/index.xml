@@ -12,7 +12,7 @@
       <pubDate>Tue, 13 Dec 2022 07:28:17 +0800</pubDate>
       
       <guid>/2022/12/%E5%A4%A7%E4%BD%9C%E4%B8%9A%E5%AE%8C%E6%88%90%E6%AD%A5%E9%AA%A4%E8%AE%B0%E5%BD%95/</guid>
-      <description>socket 使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。 使用 ubuntu 镜像启动两个容器 分别启动进入容器 $ docker start &amp;lt;容器 ID&amp;gt; $ docker attach &amp;lt;容器 ID&amp;gt; 在容器中运行服务端和客户端代码 服务端代码 客户端代码 实现服务端客户端之间的信息传递 Hugo 使用Hugo，生成静态网站，部署到Nginx服务器 安装Hugo，创建个人网站 $ hugo new site myblog 到hugo主题商店拉取模板，放在themes目录 $ git clone https://github.com/xslingcn/vno-hugo.git themes/vno-hugo 创建文章，使用Markdown语法编写网站内容 $ hugo new posts/hello.md 预览网站 $ hugo server 将静态网站部署到Nginx服务器 $ hugo -D 使用hugo -t &amp;lt;模板名&amp;gt;建立public文件 $ sudo cp public/* /var/www/html -r 将public文件放至nginx的/var/www/html目录 6. 测试可以正常访问</description>
+      <description>socket 使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。 使用 ubuntu 镜像启动两个容器 分别启动进入容器 $ docker start &amp;lt;容器 ID&amp;gt; $ docker attach &amp;lt;容器 ID&amp;gt; 在容器中运行服务端和客户端代码 服务端代码 客户端代码 实现服务端客户端之间的信息传递 Hugo 使用Hugo，生成静态网站，部署到Nginx服务器 安装Hugo，创建个人网站 $ hugo new site myblog 到hugo主题商店拉取模板，放在themes目录 $ git clone https://github.com/xslingcn/vno-hugo.git themes/vno-hugo 创建文章，使用Markdown语法编写网站内容 $ hugo new posts/hello.md 预览网站 $ hugo server 创建容器，将网站相关文件拷贝到容器里 将静态网站部署到Nginx服务器 $ hugo -D 使用hugo -t &amp;lt;模板名&amp;gt;建立public文件 $ sudo cp public/* /var/www/html -r 将public文件放至nginx的/var/www/html目录 启动nginx服务，测试可以正常访问 Git 使用git管理相关的代码、配置文件等，反映大作业过程的git提交记录。 先在github创建仓库，然后在Settings-&amp;gt;develop settings-&amp;gt;Personal Access token-&amp;gt;Generate new token创建一个提交的token 生成密钥，添加New Key $ ssh-keygen -t rsa -C &amp;#34;注册Github用的邮箱&amp;#34; 提交文件到仓库 $ git remote add origin https://github.</description>
     </item>
     
   </channel>

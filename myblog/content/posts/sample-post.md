@@ -73,3 +73,32 @@ $ sudo cp public/* /var/www/html -r
 
 ![](https://huatu.98youxi.com/markdown/work/uploads/upload_1d600d01c017effef562e72aa400a4a9.png)
 
+# Git
+### 使用git管理相关的代码、配置文件等，反映大作业过程的git提交记录。
+
+1. 先在github创建仓库，然后在Settings->develop settings->Personal Access token->Generate new token创建一个提交的token
+
+![](https://huatu.98youxi.com/markdown/work/uploads/upload_3baecdbc4695444f5d954ebd1ca88a1e.png)
+
+2. 生成密钥，添加New Key
+
+```bash
+$ ssh-keygen -t rsa -C "注册Github用的邮箱"
+```
+![](https://huatu.98youxi.com/markdown/work/uploads/upload_9f0abd54ab35c7030bb93a090a5bdbfc.png)
+
+3. 提交文件到仓库
+ 
+```bash
+$ git remote add origin https://github.com/账户名/项目名 
+```
+```bash
+$ git add 
+$ git commit -m
+```
+```bash
+$ git push origin master 
+```
+![](https://huatu.98youxi.com/markdown/work/uploads/upload_45822d580b1ab7d59c83159797a68cfa.png)
+
+
