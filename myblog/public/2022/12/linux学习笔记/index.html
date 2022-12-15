@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<head>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+
+    
+    
+    <title>Linux学习笔记 - Hzx</title>
+    
+    
+    <meta name="author" content="Hzx" /> 
+     
+    
+    <meta name="description" content="一篇关于Linux的博客" /> 
+    
+    
+    <meta name="keywords" content="笔记, Hzx" />
+    
+    <meta property="og:title" content="Linux学习笔记" />
+<meta property="og:description" content="一、目录结构 Linux的目录结构，/etc存放着系统配置文件的目录，/home是除root外的其它用户的目录，/dev存放设备文件，dev存放设备文件，boot存启动文件，tmp是临时目录，usr存放库文件，文档，命令，用户数据等，var存放变化的文件，如日志文件等，
+目录名 解析 bin 存放普通用户可执行命令 etc 系统的配置文件 root 超级用户目录 dev 系统的一些设备文件，驱动等 boot 系统的启动文件 tmp 临时文件存放目录 usr 存放用户的应用程序和文件 var 存放一些变化的文件，如程序日志等 home 普通用户的目录 run 存放进程产生的临时文件 mnt 临时的挂载文件系统 sbin 存放系统管理员才能执行的命令 二、文件命令 ls 列出该目录下的子目录与文件，常用参数： -a 以.开头的隐藏项目也列出 -l 列出目录的详细信息，可直接使用ll
+$ ls -a $ ll pwd 显示当前所处目录
+$ pwd cd 切换工作的目录，可使用相对路径与绝对路径，相对路径切换多个目录可以使用../..这种格式
+$ cd touch、mkdir touch是不存在文件则创建文件，存在则修改文件时间。 mkdir是创建目录
+$ touch &lt;文件名&gt; $ mkdir &lt;目录名&gt; cat、tail、head、tail、od、tee、more、less cat 直接输出文件的全部内容 head 输出文件开头的内容、-n 指定行数 tail 输出文件末尾的内容，-n输出尾n行 $ cat &lt;文件名&gt; rm、cp、mv rm删除某个文件，常用rm -r 用于删除目录 cp复制文件，-r可以复制目录 mv移动文件 $ rm -rf &lt;目录名&gt; $ cp -r &lt;原目录路径&gt; &lt;新目录路径&gt; $ mv -r &lt;原目录路径&gt; &lt;新目录路径&gt; find、grep、xargs find，搜索文件命令，可通过通配符搜索某个文件 grep，以正则表达式进程全局查找匹配行 xargs，命令传递参数的过滤器，可将管道或标准输入数据转换成命令行参数，也可从文件中读取数据 tar、zip、uzip、gzip 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2022/12/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-13T07:28:17+08:00" />
+<meta property="article:modified_time" content="2022-12-13T07:28:17+08:00" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux学习笔记"/>
+<meta name="twitter:description" content="一、目录结构 Linux的目录结构，/etc存放着系统配置文件的目录，/home是除root外的其它用户的目录，/dev存放设备文件，dev存放设备文件，boot存启动文件，tmp是临时目录，usr存放库文件，文档，命令，用户数据等，var存放变化的文件，如日志文件等，
+目录名 解析 bin 存放普通用户可执行命令 etc 系统的配置文件 root 超级用户目录 dev 系统的一些设备文件，驱动等 boot 系统的启动文件 tmp 临时文件存放目录 usr 存放用户的应用程序和文件 var 存放一些变化的文件，如程序日志等 home 普通用户的目录 run 存放进程产生的临时文件 mnt 临时的挂载文件系统 sbin 存放系统管理员才能执行的命令 二、文件命令 ls 列出该目录下的子目录与文件，常用参数： -a 以.开头的隐藏项目也列出 -l 列出目录的详细信息，可直接使用ll
+$ ls -a $ ll pwd 显示当前所处目录
+$ pwd cd 切换工作的目录，可使用相对路径与绝对路径，相对路径切换多个目录可以使用../..这种格式
+$ cd touch、mkdir touch是不存在文件则创建文件，存在则修改文件时间。 mkdir是创建目录
+$ touch &lt;文件名&gt; $ mkdir &lt;目录名&gt; cat、tail、head、tail、od、tee、more、less cat 直接输出文件的全部内容 head 输出文件开头的内容、-n 指定行数 tail 输出文件末尾的内容，-n输出尾n行 $ cat &lt;文件名&gt; rm、cp、mv rm删除某个文件，常用rm -r 用于删除目录 cp复制文件，-r可以复制目录 mv移动文件 $ rm -rf &lt;目录名&gt; $ cp -r &lt;原目录路径&gt; &lt;新目录路径&gt; $ mv -r &lt;原目录路径&gt; &lt;新目录路径&gt; find、grep、xargs find，搜索文件命令，可通过通配符搜索某个文件 grep，以正则表达式进程全局查找匹配行 xargs，命令传递参数的过滤器，可将管道或标准输入数据转换成命令行参数，也可从文件中读取数据 tar、zip、uzip、gzip 1."/>
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css" />
+    
+    
+
+    
+    
+    <link rel="stylesheet" href="/scss/main.min.3796779d99b798f0ae24d49c5a420db134eef2207610ed71453e417ce3ab44ed.css" integrity="sha256-N5Z3nZm3mPCuJNScWkINsTTu8iB2EO1xRT5BfOOrRO0=" crossorigin="anonymous" media="screen">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+  
+</head>
+<body>
+  <span class="mobile btn-mobile-menu">
+
+    <i class="fa fa-list btn-mobile-menu__icon"></i>
+    <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+
+  </span>
+
+  <header class="  panel-cover panel-cover--collapsed " style="background-image: url('/images/background-cover.jpg')">
+
+    <div class="panel-main">
+  
+      <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+  
+          <a href="/#blog" title="Homepage of Hzx " class="blog-button"><img src="/images/avatar.jpg" width="80" alt="Hzx logo" class="panel-cover__logo logo" /></a>
+          <h1 class="panel-cover__title panel-title"><a href="/#blog" title="Homepage of Hzx" class="blog-button">Hzx</a></h1>
+          
+          <span class="panel-cover__subtitle panel-subtitle">一个名为悲伤的猪大肠的博主</span>
+          
+          <hr class="panel-cover__divider" />
+          <p class="panel-cover__description">一篇关于Linux的博客</p>
+          <hr class="panel-cover__divider panel-cover__divider--secondary" />
+          
+          
+          <p class="panel-cover__description">Regret while rotten</p>
+          
+          
+          <div class="navigation-wrapper">
+            <div>
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="/#blog" title="博客" class="blog-button">博客</a></li>
+                  
+                    <li class="navigation__item"><a href="http://project.onevcat.com/" target="_blank" title="项目">项目</a></li>
+                  
+                    <li class="navigation__item"><a href="/tags/" target="_blank" title="标签">标签</a></li>
+                  
+                </ul>
+              </nav>
+            </div>
+            
+            <div><nav class="cover-navigation navigation--social">
+    <ul class="navigation">
+  
+    
+    
+    <li class="navigation__item">
+      <a href="http://weibo.com/onevcat" title="@onevcat" target="_blank">
+        <i class='social fa fa-weibo'></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+    
+  
+    
+    
+    <li class="navigation__item">
+      <a href="https://github.com/onevcat" title="@onevcat" target="_blank">
+        <i class='social fa fa-github'></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+    
+    
+    
+    
+    <li class="navigation__item">
+      <a href="https://twitter.com/onevcat" title="@onevcat" target="_blank">
+        <i class='social fa fa-twitter'></i>
+        <span class="label">Twitter</span>
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="navigation__item">
+      <a href="https://www.linkedin.com/in/example" title="@example" target="_blank">
+        <i class='social fa fa-linkedin'></i>
+        <span class="label">Linkedin</span>
+      </a>
+    </li>
+    
+  
+    
+    
+    <li class="navigation__item">
+      <a href="https://plus.google.com/107108267983477358170" rel="author" title="Google+" target="_blank">
+        <i class='social fa fa-google-plus-square'></i>
+        <span class="label">Google Plus</span>
+      </a>
+    </li>
+    
+  
+    
+    <li class="navigation__item">
+      <a href="/index.xml" rel="author" title="RSS" target="_blank">
+        <i class='social fa fa-rss'></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+  
+    
+    
+    <li class="navigation__item">
+      <a href="mailto:onev@onevcat.com" title="Contact me">
+        <i class='social fa fa-envelope'></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  
+    </ul>
+  </nav>
+  </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="panel-cover--overlay cover-red"></div>
+      
+    </div>
+  </header>
+  
+
+  <div class="content-wrapper">
+    <div class="content-wrapper__inner">
+
+        
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <div class="post-meta">
+            <time datetime=" 2022-12-13 07:28:17 &#43;0800 " itemprop="datePublished" class="post-meta__date date">2022-12-13</time>
+             <span class="post-meta__tags tags">   • <a href="tags/%E7%AC%94%E8%AE%B0">笔记</a>   • <a href="tags/hzx">Hzx</a>  </span> 
+        </div>
+        <h1 class="post-title">Linux学习笔记</h1>
+    </header>
+    <section class="post">
+        <h3 id="一目录结构">一、目录结构</h3>
+<p>Linux的目录结构，/etc存放着系统配置文件的目录，/home是除root外的其它用户的目录，/dev存放设备文件，dev存放设备文件，boot存启动文件，tmp是临时目录，usr存放库文件，文档，命令，用户数据等，var存放变化的文件，如日志文件等，</p>
+<table>
+<thead>
+<tr>
+<th>目录名</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bin</td>
+<td>存放普通用户可执行命令</td>
+</tr>
+<tr>
+<td>etc</td>
+<td>系统的配置文件</td>
+</tr>
+<tr>
+<td>root</td>
+<td>超级用户目录</td>
+</tr>
+<tr>
+<td>dev</td>
+<td>系统的一些设备文件，驱动等</td>
+</tr>
+<tr>
+<td>boot</td>
+<td>系统的启动文件</td>
+</tr>
+<tr>
+<td>tmp</td>
+<td>临时文件存放目录</td>
+</tr>
+<tr>
+<td>usr</td>
+<td>存放用户的应用程序和文件</td>
+</tr>
+<tr>
+<td>var</td>
+<td>存放一些变化的文件，如程序日志等</td>
+</tr>
+<tr>
+<td>home</td>
+<td>普通用户的目录</td>
+</tr>
+<tr>
+<td>run</td>
+<td>存放进程产生的临时文件</td>
+</tr>
+<tr>
+<td>mnt</td>
+<td>临时的挂载文件系统</td>
+</tr>
+<tr>
+<td>sbin</td>
+<td>存放系统管理员才能执行的命令</td>
+</tr>
+</tbody>
+</table>
+<h3 id="二文件命令">二、文件命令</h3>
+<h3 id="ls">ls</h3>
+<p>列出该目录下的子目录与文件，常用参数：
+-a 以.开头的隐藏项目也列出
+-l  列出目录的详细信息，可直接使用ll</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$  ls -a
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ll
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_585c8c2a6f53753ffb404e48ffec65f3.png" alt=""></p>
+<h3 id="pwd">pwd</h3>
+<p>显示当前所处目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pwd
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_6b0fade7528cae8a16db05ec946a1c8a.png" alt=""></p>
+<h3 id="cd">cd</h3>
+<p>切换工作的目录，可使用相对路径与绝对路径，相对路径切换多个目录可以使用../..这种格式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$  cd
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_ade6f8ed03d38bd6c06186ef2f11b5c3.png" alt=""></p>
+<h3 id="touchmkdir">touch、mkdir</h3>
+<p><strong>touch</strong>是不存在文件则创建文件，存在则修改文件时间。
+<strong>mkdir</strong>是创建目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch &lt;文件名&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir &lt;目录名&gt;
+</span></span></code></pre></div><h3 id="cattailheadtailodteemoreless">cat、tail、head、tail、od、tee、more、less</h3>
+<ol>
+<li><strong>cat</strong> 直接输出文件的全部内容</li>
+<li><strong>head</strong> 输出文件开头的内容、-n 指定行数</li>
+<li><strong>tail</strong> 输出文件末尾的内容，-n输出尾n行</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat &lt;文件名&gt;
+</span></span></code></pre></div><h3 id="rmcpmv">rm、cp、mv</h3>
+<ol>
+<li><strong>rm</strong>删除某个文件，常用rm -r 用于删除目录</li>
+<li><strong>cp</strong>复制文件，-r可以复制目录</li>
+<li><strong>mv</strong>移动文件</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rm -rf &lt;目录名&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cp -r &lt;原目录路径&gt; &lt;新目录路径&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mv -r &lt;原目录路径&gt; &lt;新目录路径&gt;
+</span></span></code></pre></div><h3 id="findgrepxargs">find、grep、xargs</h3>
+<ol>
+<li><strong>find</strong>，搜索文件命令，可通过通配符搜索某个文件</li>
+<li><strong>grep</strong>，以正则表达式进程全局查找匹配行</li>
+<li><strong>xargs</strong>，命令传递参数的过滤器，可将管道或标准输入数据转换成命令行参数，也可从文件中读取数据</li>
+</ol>
+<h3 id="tarzipuzipgzip">tar、zip、uzip、gzip</h3>
+<p>1.<strong>tar</strong>将文件打包或压缩或解包，压缩文件后缀有gz、bz、xz，常用参数 -c产生.tar打包文件，-x解包、-zjJ分别以gz、bz2、xz打包或解包文件。
+2.<strong>zip</strong>将文件打包，常用-r递归打包目录
+3.<strong>uzip</strong>将文件解包
+4.<strong>gzip</strong>压缩命令，只能压缩文件，不能压缩目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tar <span style="color:#f92672">[</span>选择<span style="color:#f92672">]</span> xxx.tar.gz 打包的内容
+</span></span></code></pre></div><h3 id="linux重定向与管道">Linux重定向与管道</h3>
+<p>shell命令有三种标准文件：</p>
+<ol>
+<li>标准输入文件，使用&lt;或&laquo;</li>
+<li>标准输出文件，使用&gt;或&raquo;</li>
+<li>标准错误输出文件，使用2&gt;或2&raquo;
+注：双符号表示追加</li>
+</ol>
+<p>管道：</p>
+<ol>
+<li>| 将上一次的输出作为下一次的输入</li>
+<li>|| 当左边命令为假，右边命令才会执行</li>
+<li>&amp; 表示任务在后台执行</li>
+<li>&amp;&amp;前一条命令执行成功才会执行后门的命令</li>
+<li>;隔开命令，从左到右执行</li>
+</ol>
+<p>应用实例：在hello.txt文件中，查找 &ldquo;yes&rdquo; 所在行，并且显示行号</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat hello.txt | grep -ni yes
+</span></span></code></pre></div><h3 id="三vim编辑器">三、Vim编辑器</h3>
+<p>一个强大的文本编辑器，常用的操作如下</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k/j</td>
+<td>向上或下查找</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>移动到文件的第一行</td>
+</tr>
+<tr>
+<td>G</td>
+<td>移动到文件的最后一行</td>
+</tr>
+<tr>
+<td>/word</td>
+<td>搜索某个字符串，n表示到下一个</td>
+</tr>
+<tr>
+<td>n</td>
+<td>光标向下移动n行</td>
+</tr>
+<tr>
+<td>0或$</td>
+<td>移动到当前行首字符或尾字符</td>
+</tr>
+<tr>
+<td>dd/ggdG</td>
+<td>删除当前行，ndd表示连续删除后n行，ggdG表示删除全部</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>复制当前行，nyy表示复制下面n行</td>
+</tr>
+<tr>
+<td>p/P</td>
+<td>将复制内容在下一行粘贴上/在上一行粘贴上</td>
+</tr>
+<tr>
+<td>u</td>
+<td>还原上一次操作</td>
+</tr>
+<tr>
+<td>ctrl+r</td>
+<td>重复上一次动作</td>
+</tr>
+<tr>
+<td>i</td>
+<td>光标前插入文本</td>
+</tr>
+<tr>
+<td>x</td>
+<td>删除光标字符</td>
+</tr>
+<tr>
+<td>R+word</td>
+<td>连续替换多个字符</td>
+</tr>
+<tr>
+<td>:%s/old/new/g</td>
+<td>有$替换整个文档的内容，无%替换该行全部，去掉g表示替换首个</td>
+</tr>
+<tr>
+<td>set nu</td>
+<td>显示行数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="四进程管理">四、进程管理</h3>
+<h3 id="1-基本介绍">1. 基本介绍</h3>
+<p>在Linux中，每个执行的程序（代码）都称为一个进程。每一个进程都分配一个ID号。
+每一个进程，都会对应一个父进程，而这个父进程可以复制多个子进程。例如www服务器
+每个进程都可能以两种方式存在的。前台与后台（守护进程），所谓前台进程就是用户目前的屏幕上可以进行操作的。后台进程则是实际在操作，但由于屏幕上无法看到的进程，通常使用后台方式执行。
+一般系统的服务都是以后台进程的方式存在，而且都会常驻在系统中。直到关机才能结束。</p>
+<h3 id="2-查看进程的相关指令">2. 查看进程的相关指令</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ps</td>
+<td>查看目前系统中，有哪些正在执行的进程，以及这些进程执行的情况，可以不加任何参数</td>
+</tr>
+<tr>
+<td>ps -a</td>
+<td>显示当前终端的所有进程信息</td>
+</tr>
+<tr>
+<td>ps -u</td>
+<td>以用户的格式显示进程信息</td>
+</tr>
+<tr>
+<td>ps -x</td>
+<td>显示后台进程运行的参数</td>
+</tr>
+<tr>
+<td>ps -aux</td>
+<td>查看详细信息  太多可以使用more分页查看  ps -aux</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3定时任务">3.定时任务</h3>
+<p>一般linux的定时任务都会存放在/etc/crontab中</p>
+<ol>
+<li>linux可通过crontab设置定时任务，常用参数-e 设置任务，-l 查看任务计划
+设置任务的时间格式为：
+分钟 小时 日期 月份 星期   命令</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ crontab -e
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ */1 * * * * ls -l /etc/ &gt; /tmp/to.txt
+</span></span><span style="display:flex;"><span>//表示每分钟执行ls -l /etc/ &gt; /tmp/to.txt命令
+</span></span></code></pre></div><h3 id="五磁盘管理">五、磁盘管理</h3>
+<h3 id="1基本命令">1.基本命令</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lsblk</td>
+<td>列出所有存储装置</td>
+</tr>
+<tr>
+<td>blkid</td>
+<td>列出装置的UUID，文件系统等参数</td>
+</tr>
+<tr>
+<td>parted /dev/vda print</td>
+<td>列出/dev/vda的分区参数以及分区格式</td>
+</tr>
+<tr>
+<td>gdisk dev/vda</td>
+<td>对dev/vda进行分区</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2磁盘分区操作">2.磁盘分区操作</h3>
+<h4 id="1添加虚拟磁盘">1.添加虚拟磁盘</h4>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_38ed72a0f767a3dc2ff2a17213aa9efe.png" alt=""></p>
+<h4 id="2磁盘分区">2.磁盘分区</h4>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_769516586ba75215bcb968bdb6cd493e.png" alt=""></p>
+<h4 id="3-磁盘挂载">3. 磁盘挂载</h4>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_2944d3573c9f1e673a181554dc613124.png" alt=""></p>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_166ea9f355068382ae75a798c31a89e3.png" alt=""></p>
+<h4 id="4非交互式磁盘分区">4.非交互式磁盘分区</h4>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_0fb654e9a4537aa1e9b09c515e4bb427.png" alt=""></p>
+<h4 id="5逻辑卷">5.逻辑卷</h4>
+<p>LVM-逻辑卷管理是Linux环境中对磁盘分区进行管理的一种机制，是建立在硬盘和分区之上、文件系统之下的一个逻辑层，用于提高磁盘分区管理的灵活性</p>
+<p>常用命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pvcreate  /DEV</td>
+<td>创建物理卷</td>
+</tr>
+<tr>
+<td>pvs</td>
+<td>查看物理卷</td>
+</tr>
+<tr>
+<td>pvremove /DEV</td>
+<td>删除物理卷</td>
+</tr>
+<tr>
+<td>vgcreate VGNAME /DEV</td>
+<td>创建卷组</td>
+</tr>
+<tr>
+<td>vgextend /DEV</td>
+<td>扩展卷组</td>
+</tr>
+<tr>
+<td>vgreduce VGNAME /DEV</td>
+<td>收缩卷组</td>
+</tr>
+<tr>
+<td>vgremove VGNAME</td>
+<td>删除卷组</td>
+</tr>
+<tr>
+<td>lvcreate -L 10G -n LVNAME VGNAME</td>
+<td>创建指定逻辑卷大小和逻辑卷名称的名称</td>
+</tr>
+<tr>
+<td>lvs</td>
+<td>查看逻辑卷</td>
+</tr>
+<tr>
+<td>lvextend -L +10G /DEV</td>
+<td>增加10G逻辑卷大小</td>
+</tr>
+<tr>
+<td>lvremove /DEV/VGNAME/LVNAME</td>
+<td>删除逻辑卷</td>
+</tr>
+</tbody>
+</table>
+<h3 id="六shell脚本编程">六、Shell脚本编程</h3>
+<h4 id="符号变量">符号变量</h4>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#</td>
+<td>注释符</td>
+</tr>
+<tr>
+<td>$</td>
+<td>变量符</td>
+</tr>
+<tr>
+<td>''</td>
+<td>单引号字符，全部普通字符</td>
+</tr>
+<tr>
+<td>&quot;&quot;</td>
+<td>双引号字符，可以包括特殊字符如反引号`，变量符$</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>返回上一个变量返回值</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>传送给shell程序位置参数的数量</td>
+</tr>
+<tr>
+<td>$0</td>
+<td>当前执行的进程名</td>
+</tr>
+<tr>
+<td>$!</td>
+<td>后台运行的最后一个进程号</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>当前进程的进程号</td>
+</tr>
+<tr>
+<td>$n</td>
+<td>第n个参数</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>全部位置参数</td>
+</tr>
+<tr>
+<td>$()</td>
+<td>获取命令输出结果</td>
+</tr>
+<tr>
+<td>``</td>
+<td>获取命令输出结果</td>
+</tr>
+<tr>
+<td>$(())</td>
+<td>算数拓展运算符</td>
+</tr>
+<tr>
+<td>-eq、-ne、-lt、le、-gt、-ge</td>
+<td>表示相等、不等于、小于、小于或等于、大于、大于或等于</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>条件表达式</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>是否是目录，如 if [-f a.sh]</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>是否是普通文件，如if [-d a.txt]</td>
+</tr>
+<tr>
+<td>-a、-o</td>
+<td>逻辑和与逻辑或</td>
+</tr>
+</tbody>
+</table>
+<h3 id="六关于git">六、关于git</h3>
+<h4 id="git是分布式的版本控制系统是一种代码管理工具能够方便程序员在编写代码未完成时候能够保存但却不影响项目的运行">git是分布式的版本控制系统，是一种代码管理工具，能够方便程序员在编写代码，未完成时候能够保存但却不影响项目的运行。</h4>
+<p><strong>git</strong>的常用命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git init</td>
+<td>初始化git仓库</td>
+</tr>
+<tr>
+<td>git config user.name name</td>
+<td>设置目标用户名</td>
+</tr>
+<tr>
+<td>git config user.email email</td>
+<td>设置目标邮箱</td>
+</tr>
+<tr>
+<td>git config &ndash;list</td>
+<td>查看配置信息</td>
+</tr>
+<tr>
+<td>git add 文件名</td>
+<td>将文件添加到暂存区</td>
+</tr>
+<tr>
+<td>git checkout</td>
+<td>暂存区内容恢复到工作区</td>
+</tr>
+<tr>
+<td>git commit -m &ldquo;提交说明&rdquo;</td>
+<td>将文件从暂存区添加到仓库区</td>
+</tr>
+<tr>
+<td>git log</td>
+<td>查看提交日志</td>
+</tr>
+<tr>
+<td>git reset &ndash;hard 版本号</td>
+<td>将代码恢复到已经提交的某一个版本</td>
+</tr>
+<tr>
+<td>git branch 分支名</td>
+<td>创建分支</td>
+</tr>
+<tr>
+<td>git checkout -b 分支名称</td>
+<td>切换分支</td>
+</tr>
+<tr>
+<td>git branch -d 分支名称</td>
+<td>删除分支</td>
+</tr>
+<tr>
+<td>git push URL master</td>
+<td>将缓存区内容提交到远程仓库</td>
+</tr>
+<tr>
+<td>git pull</td>
+<td>将远程代码下载到本地</td>
+</tr>
+<tr>
+<td>git remote add 仓库别名 仓库地址</td>
+<td>为远程仓库添加别名</td>
+</tr>
+<tr>
+<td>git push -u 别名  分支</td>
+<td>将缓存区内容提交到仓库</td>
+</tr>
+</tbody>
+</table>
+
+    </section>
+</article>
+<section class="read-more">
+    
+
+
+    
+    <div class="read-more-item">
+        <span class="read-more-item-dim">Earlier</span>
+        <h2 class="post-list__post-title post-title"><a href="/2022/12/%E5%A4%A7%E4%BD%9C%E4%B8%9A%E5%AE%8C%E6%88%90%E6%AD%A5%E9%AA%A4%E8%AE%B0%E5%BD%95/" title="link to 大作业完成步骤记录">大作业完成步骤记录</a></h2>
+        <p class="excerpt">socket 使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。 使用 ubuntu 镜像启动两个容器 分别启动进入容器 $ docker start &lt;容器 ID&gt; $ docker attach &lt;容器 ID&gt; 在容器中运行服务端和客户端代码 服务端代码 客户端代码 实现服务端客户端之间的信息传递 Hugo 使用Hugo，生成静态网站，部署到Nginx服务器 安装Hugo，创建个人网站 $ …&hellip;</p>
+        <div class="post-list__meta">
+            <time datetime=" 2022-12-13 07:28:17 &#43;0800" class="post-list__meta--date date">2022-12-13</time>
+             
+            <span class="post-list__meta--tags tags"> 
+                  • <a href="tags/%E4%BD%9C%E4%B8%9A">作业</a>   • <a href="tags/hzx">Hzx</a>  
+            </span>
+            
+            <a class="btn-border-small" href="/2022/12/%E5%A4%A7%E4%BD%9C%E4%B8%9A%E5%AE%8C%E6%88%90%E6%AD%A5%E9%AA%A4%E8%AE%B0%E5%BD%95/">Continue</a>
+        </div>
+    </div>
+    
+ </section>
+  
+<section class="post-comments">
+    
+      <div id="disqus_thread"></div>
+      <script>
+      
+      var disqus_config = function () {
+          this.page.url = "\/2022\/12\/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/";
+          this.page.identifier = "\/2022\/12\/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/";
+      };
+  
+      var disqus_shortname = 'vno-hogo';
+      
+      (function() { 
+          var d = document, s = d.createElement('script');
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+      </script>
+      <noscript>To view comments from<a href="http://disqus.com/?ref_noscript"> Disqus </a>, please enable JavaScript.</noscript>
+      
+    
+
+    
+    
+  </section>
+  
+
+        <section class="footer">
+    <footer>
+        <span class="footer__copyright">This site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> license.</span>
+        <span class="footer__copyright">Generated by <a href="https://gohugo.io/">Hugo</a> at 2022-12-14, themed with <a href="https://github.com/xslingcn/vno-hugo"> Vno - Hugo</a>.</span>
+    </footer>
+</section>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script><script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '1111', 'your_host');
+    ga('send', 'pageview');
+</script>
+
+  
+</body>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记 on Hzx</title>
+    <link>/tags/%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 笔记 on Hzx</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 13 Dec 2022 07:28:17 +0800</lastBuildDate><atom:link href="/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux学习笔记</title>
+      <link>/2022/12/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 13 Dec 2022 07:28:17 +0800</pubDate>
+      
+      <guid>/2022/12/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>一、目录结构 Linux的目录结构，/etc存放着系统配置文件的目录，/home是除root外的其它用户的目录，/dev存放设备文件，dev存放设备文件，boot存启动文件，tmp是临时目录，usr存放库文件，文档，命令，用户数据等，var存放变化的文件，如日志文件等，
+目录名 解析 bin 存放普通用户可执行命令 etc 系统的配置文件 root 超级用户目录 dev 系统的一些设备文件，驱动等 boot 系统的启动文件 tmp 临时文件存放目录 usr 存放用户的应用程序和文件 var 存放一些变化的文件，如程序日志等 home 普通用户的目录 run 存放进程产生的临时文件 mnt 临时的挂载文件系统 sbin 存放系统管理员才能执行的命令 二、文件命令 ls 列出该目录下的子目录与文件，常用参数： -a 以.开头的隐藏项目也列出 -l 列出目录的详细信息，可直接使用ll
+$ ls -a $ ll pwd 显示当前所处目录
+$ pwd cd 切换工作的目录，可使用相对路径与绝对路径，相对路径切换多个目录可以使用../..这种格式
+$ cd touch、mkdir touch是不存在文件则创建文件，存在则修改文件时间。 mkdir是创建目录
+$ touch &amp;lt;文件名&amp;gt; $ mkdir &amp;lt;目录名&amp;gt; cat、tail、head、tail、od、tee、more、less cat 直接输出文件的全部内容 head 输出文件开头的内容、-n 指定行数 tail 输出文件末尾的内容，-n输出尾n行 $ cat &amp;lt;文件名&amp;gt; rm、cp、mv rm删除某个文件，常用rm -r 用于删除目录 cp复制文件，-r可以复制目录 mv移动文件 $ rm -rf &amp;lt;目录名&amp;gt; $ cp -r &amp;lt;原目录路径&amp;gt; &amp;lt;新目录路径&amp;gt; $ mv -r &amp;lt;原目录路径&amp;gt; &amp;lt;新目录路径&amp;gt; find、grep、xargs find，搜索文件命令，可通过通配符搜索某个文件 grep，以正则表达式进程全局查找匹配行 xargs，命令传递参数的过滤器，可将管道或标准输入数据转换成命令行参数，也可从文件中读取数据 tar、zip、uzip、gzip 1.</description>
+    </item>
+    
+  </channel>
+</rss>

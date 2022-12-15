@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<head>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+
+    
+    
+    <title>大作业完成步骤记录 - Hzx</title>
+    
+    
+    <meta name="author" content="Hzx" /> 
+     
+    
+    <meta name="description" content="一篇关于Linux的博客" /> 
+    
+    
+    <meta name="keywords" content="作业, Hzx" />
+    
+    <meta property="og:title" content="大作业完成步骤记录" />
+<meta property="og:description" content="socket 使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。 使用 ubuntu 镜像启动两个容器 分别启动进入容器 $ docker start &lt;容器 ID&gt; $ docker attach &lt;容器 ID&gt; 在容器中运行服务端和客户端代码 服务端代码 客户端代码 实现服务端客户端之间的信息传递 Hugo 使用Hugo，生成静态网站，部署到Nginx服务器 安装Hugo，创建个人网站 $ hugo new site myblog 到hugo主题商店拉取模板，放在themes目录 $ git clone https://github.com/xslingcn/vno-hugo.git themes/vno-hugo 创建文章，使用Markdown语法编写网站内容 $ hugo new posts/hello.md 预览网站 $ hugo server 将静态网站部署到Nginx服务器 $ hugo -D 使用hugo -t &lt;模板名&gt;建立public文件 $ sudo cp public/* /var/www/html -r 将public文件放至nginx的/var/www/html目录 6. 测试可以正常访问" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2022/12/%E5%A4%A7%E4%BD%9C%E4%B8%9A%E5%AE%8C%E6%88%90%E6%AD%A5%E9%AA%A4%E8%AE%B0%E5%BD%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-13T07:28:17+08:00" />
+<meta property="article:modified_time" content="2022-12-13T07:28:17+08:00" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="大作业完成步骤记录"/>
+<meta name="twitter:description" content="socket 使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。 使用 ubuntu 镜像启动两个容器 分别启动进入容器 $ docker start &lt;容器 ID&gt; $ docker attach &lt;容器 ID&gt; 在容器中运行服务端和客户端代码 服务端代码 客户端代码 实现服务端客户端之间的信息传递 Hugo 使用Hugo，生成静态网站，部署到Nginx服务器 安装Hugo，创建个人网站 $ hugo new site myblog 到hugo主题商店拉取模板，放在themes目录 $ git clone https://github.com/xslingcn/vno-hugo.git themes/vno-hugo 创建文章，使用Markdown语法编写网站内容 $ hugo new posts/hello.md 预览网站 $ hugo server 将静态网站部署到Nginx服务器 $ hugo -D 使用hugo -t &lt;模板名&gt;建立public文件 $ sudo cp public/* /var/www/html -r 将public文件放至nginx的/var/www/html目录 6. 测试可以正常访问"/>
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css" />
+    
+    
+
+    
+    
+    <link rel="stylesheet" href="/scss/main.min.3796779d99b798f0ae24d49c5a420db134eef2207610ed71453e417ce3ab44ed.css" integrity="sha256-N5Z3nZm3mPCuJNScWkINsTTu8iB2EO1xRT5BfOOrRO0=" crossorigin="anonymous" media="screen">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+  
+</head>
+<body>
+  <span class="mobile btn-mobile-menu">
+
+    <i class="fa fa-list btn-mobile-menu__icon"></i>
+    <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+
+  </span>
+
+  <header class="  panel-cover panel-cover--collapsed " style="background-image: url('/images/background-cover.jpg')">
+
+    <div class="panel-main">
+  
+      <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+  
+          <a href="/#blog" title="Homepage of Hzx " class="blog-button"><img src="/images/avatar.jpg" width="80" alt="Hzx logo" class="panel-cover__logo logo" /></a>
+          <h1 class="panel-cover__title panel-title"><a href="/#blog" title="Homepage of Hzx" class="blog-button">Hzx</a></h1>
+          
+          <span class="panel-cover__subtitle panel-subtitle">一个名为悲伤的猪大肠的博主</span>
+          
+          <hr class="panel-cover__divider" />
+          <p class="panel-cover__description">一篇关于Linux的博客</p>
+          <hr class="panel-cover__divider panel-cover__divider--secondary" />
+          
+          
+          <p class="panel-cover__description">Regret while rotten</p>
+          
+          
+          <div class="navigation-wrapper">
+            <div>
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="/#blog" title="博客" class="blog-button">博客</a></li>
+                  
+                    <li class="navigation__item"><a href="http://project.onevcat.com/" target="_blank" title="项目">项目</a></li>
+                  
+                    <li class="navigation__item"><a href="/tags/" target="_blank" title="标签">标签</a></li>
+                  
+                </ul>
+              </nav>
+            </div>
+            
+            <div><nav class="cover-navigation navigation--social">
+    <ul class="navigation">
+  
+    
+    
+    <li class="navigation__item">
+      <a href="http://weibo.com/onevcat" title="@onevcat" target="_blank">
+        <i class='social fa fa-weibo'></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+    
+  
+    
+    
+    <li class="navigation__item">
+      <a href="https://github.com/onevcat" title="@onevcat" target="_blank">
+        <i class='social fa fa-github'></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+    
+    
+    
+    
+    <li class="navigation__item">
+      <a href="https://twitter.com/onevcat" title="@onevcat" target="_blank">
+        <i class='social fa fa-twitter'></i>
+        <span class="label">Twitter</span>
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="navigation__item">
+      <a href="https://www.linkedin.com/in/example" title="@example" target="_blank">
+        <i class='social fa fa-linkedin'></i>
+        <span class="label">Linkedin</span>
+      </a>
+    </li>
+    
+  
+    
+    
+    <li class="navigation__item">
+      <a href="https://plus.google.com/107108267983477358170" rel="author" title="Google+" target="_blank">
+        <i class='social fa fa-google-plus-square'></i>
+        <span class="label">Google Plus</span>
+      </a>
+    </li>
+    
+  
+    
+    <li class="navigation__item">
+      <a href="/index.xml" rel="author" title="RSS" target="_blank">
+        <i class='social fa fa-rss'></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+  
+    
+    
+    <li class="navigation__item">
+      <a href="mailto:onev@onevcat.com" title="Contact me">
+        <i class='social fa fa-envelope'></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  
+    </ul>
+  </nav>
+  </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="panel-cover--overlay cover-red"></div>
+      
+    </div>
+  </header>
+  
+
+  <div class="content-wrapper">
+    <div class="content-wrapper__inner">
+
+        
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <div class="post-meta">
+            <time datetime=" 2022-12-13 07:28:17 &#43;0800 " itemprop="datePublished" class="post-meta__date date">2022-12-13</time>
+             <span class="post-meta__tags tags">   • <a href="tags/%E4%BD%9C%E4%B8%9A">作业</a>   • <a href="tags/hzx">Hzx</a>  </span> 
+        </div>
+        <h1 class="post-title">大作业完成步骤记录</h1>
+    </header>
+    <section class="post">
+        <h1 id="socket">socket</h1>
+<h3 id="使用容器技术docker将socket客户端和服务端分别运行在不同的容器中实现socket客户端和服务端之间的信息传递">使用容器技术Docker，将socket客户端和服务端分别运行在不同的容器中，实现socket客户端和服务端之间的信息传递。</h3>
+<ol>
+<li>使用 ubuntu 镜像启动两个容器</li>
+</ol>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_6f8bcb4e8d27b55d361b917faa6169e5.png" alt=""></p>
+<ol start="2">
+<li>分别启动进入容器</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker start &lt;容器 ID&gt;
+</span></span><span style="display:flex;"><span>$ docker attach &lt;容器 ID&gt;
+</span></span></code></pre></div><ol start="3">
+<li>在容器中运行服务端和客户端代码</li>
+</ol>
+<h3 id="服务端代码">服务端代码</h3>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_70c6f19368ffe291dca6d382bf5f8a9c.png" alt=""></p>
+<h3 id="客户端代码">客户端代码</h3>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_7722dcfdd839b63c2f8778b04522cbc3.png" alt=""></p>
+<ol start="4">
+<li>实现服务端客户端之间的信息传递</li>
+</ol>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_a9d290f97a308e33216c77e06e6531a6.png" alt=""></p>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_39120a1b3a565a96dba49d67db4f59f6.png" alt=""></p>
+<h1 id="hugo">Hugo</h1>
+<h3 id="使用hugo生成静态网站部署到nginx服务器">使用Hugo，生成静态网站，部署到Nginx服务器</h3>
+<ol>
+<li>安装Hugo，创建个人网站</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ hugo new site myblog
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_c4320578d22fc5ee16247d85922f953c.png" alt=""></p>
+<ol start="2">
+<li>到hugo主题商店拉取模板，放在themes目录</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git clone https://github.com/xslingcn/vno-hugo.git themes/vno-hugo
+</span></span></code></pre></div><ol start="3">
+<li>创建文章，使用Markdown语法编写网站内容</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ hugo new posts/hello.md
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_6b6b2143a29f0bbada17276d73da4685.png" alt=""></p>
+<ol start="4">
+<li>预览网站</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ hugo server
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_aec2f6d9ba484a104ab1ef7758fa68b9.png" alt=""></p>
+<ol start="5">
+<li>将静态网站部署到Nginx服务器</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ hugo -D
+</span></span><span style="display:flex;"><span>使用hugo -t &lt;模板名&gt;建立public文件
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo cp public/* /var/www/html -r
+</span></span><span style="display:flex;"><span>将public文件放至nginx的/var/www/html目录
+</span></span></code></pre></div><p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_ccc40be515d4fda4d82de9b965742d20.png" alt="">
+6. 测试可以正常访问</p>
+<p><img src="https://huatu.98youxi.com/markdown/work/uploads/upload_1d600d01c017effef562e72aa400a4a9.png" alt=""></p>
+
+    </section>
+</article>
+<section class="read-more">
+    
+    <div class="read-more-item">
+        <span class="read-more-item-dim">Recent</span>
+        <h2 class="post-list__post-title post-title"><a href="/2022/12/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="link to Linux学习笔记">Linux学习笔记</a></h2>
+        <p class="excerpt">一、目录结构 Linux的目录结构，/etc存放着系统配置文件的目录，/home是除root外的其它用户的目录，/dev存放设备文件，dev存放设备文件，boot存启动文件，tmp是临时目录，usr存放库文件，文档，命令，用户数据等，var存放变化的文件，如日志文件等，
+目录名 解析 bin 存放普通用户可执行命令 etc 系统的配置文件 root 超级用户目录 dev 系统的一些设备文件，驱动等 boot 系统的启动文件 tmp 临时文件存放目录 usr 存放用户的应用程序和文件 var 存放 …&hellip;</p>
+        <div class="post-list__meta">
+            <time datetime=" 2022-12-13 07:28:17 &#43;0800" class="post-list__meta--date date">2022-12-13</time>
+             <span class="post-list__meta--tags tags">   • <a href="tags/%E7%AC%94%E8%AE%B0">笔记</a>   • <a href="tags/hzx">Hzx</a>  </span> 
+            <a class="btn-border-small" href="/2022/12/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Continue</a>
+        </div>
+    </div>
+    
+
+
+    
+ </section>
+  
+<section class="post-comments">
+    
+      <div id="disqus_thread"></div>
+      <script>
+      
+      var disqus_config = function () {
+          this.page.url = "\/2022\/12\/%E5%A4%A7%E4%BD%9C%E4%B8%9A%E5%AE%8C%E6%88%90%E6%AD%A5%E9%AA%A4%E8%AE%B0%E5%BD%95\/";
+          this.page.identifier = "\/2022\/12\/%E5%A4%A7%E4%BD%9C%E4%B8%9A%E5%AE%8C%E6%88%90%E6%AD%A5%E9%AA%A4%E8%AE%B0%E5%BD%95\/";
+      };
+  
+      var disqus_shortname = 'vno-hogo';
+      
+      (function() { 
+          var d = document, s = d.createElement('script');
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+      </script>
+      <noscript>To view comments from<a href="http://disqus.com/?ref_noscript"> Disqus </a>, please enable JavaScript.</noscript>
+      
+    
+
+    
+    
+  </section>
+  
+
+        <section class="footer">
+    <footer>
+        <span class="footer__copyright">This site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> license.</span>
+        <span class="footer__copyright">Generated by <a href="https://gohugo.io/">Hugo</a> at 2022-12-14, themed with <a href="https://github.com/xslingcn/vno-hugo"> Vno - Hugo</a>.</span>
+    </footer>
+</section>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script><script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '1111', 'your_host');
+    ga('send', 'pageview');
+</script>
+
+  
+</body>
+

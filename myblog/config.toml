@@ -1,0 +1,80 @@
+# Basic
+title = "Hzx"
+#baseURL = "https://vno-hugo.netlify.app/"
+theme = "vno-hugo"
+
+# supported languages: en-us, zh-cn (lowercase language codes only)
+defaultContentLanguage = 'en-us'
+# here lists available languages, if you wish to add your own custom translation, please refer to https://gohugo.io/content-management/multilingual
+[languages]
+  [languages.en-us]
+    languageName = 'English(United States)'
+    weight = 10
+  [languages.zh-cn]
+    languageName = '简体中文（中国大陆）'
+    weight = 20
+
+# Pagination
+paginate = 10
+paginatePath = "page"
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[menu]
+  [[menu.main]]
+    name = "项目"
+    identifier = "projects"
+    url = "http://project.onevcat.com/"
+    weight = 10
+ [[menu.main]]
+    name = "标签"
+    identifier = "Tags"
+    url = "/tags/"
+    weight = 20
+[taxonomies]
+    tag = "tags"
+    
+[params]
+author = "Hzx"
+subtitle = "一个名为悲伤的猪大肠的博主"
+description = "一篇关于Linux的博客"
+welcomeMessage = "Regret while rotten"
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+coverColor = "red"
+
+[params.comment]
+disqus = "vno-hogo"
+duoshuo = ""
+
+# Take a look on https://github.com/gitalk/gitalk#usage for more info.
+[params.comment.gitalk]
+ID = ""
+secret = ""
+repo = ""
+owner = ""
+
+[params.social]
+weibo = "onevcat"
+github = "onevcat"
+twitter = "onevcat"
+gplus = "107108267983477358170"
+mail = "onev@onevcat.com"
+linkedin = "example"
+
+[params.ga]
+ID = "1111"
+host = "your_host"
+
+# The blog button should not be removed.
+[params.blogButton]
+title = "博客"
+description = "Visit blog"
+
+[params.copyright]
+license = 'CC BY-NC-SA 4.0'
+license_link = 'http://creativecommons.org/licenses/by-nc-sa/4.0/'
+
+[permalinks]
+posts = "/:year/:month/:title/"
